@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import IpoListPage from "./components/IpoListPage";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import IpoDetailsPage from "./components/IpoDetailsPage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/" element={<IpoListPage />} />
+          <Route path="/detailpage" element={<IpoDetailsPage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
