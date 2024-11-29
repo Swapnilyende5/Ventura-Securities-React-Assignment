@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const DetailsHeader = () => {
+const DetailsHeader = ({ company, logo }) => {
   return (
     <div className="details-header details-header_elements">
       <div className="details-header_elements">
-        <p className="elements-border">&lt;</p>
+        <Link to="/" style={{textDecoration:"none"}} className="elements-border">&lt;</Link>
         <div className="issueDate">
-          <img src="/images/oyo.png" alt="oyoLogo" />
+          <img src={logo} alt={`${company}Logo`} />
           <div>
-            <p className="primaryText">OYO</p>
-            <p className="secondaryText">OYO Private Limited</p>
+            <p className="primaryText">{company}</p>
+            <p className="secondaryText">{company} Private Limited</p>
           </div>
         </div>
       </div>

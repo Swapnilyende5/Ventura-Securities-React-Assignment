@@ -4,13 +4,16 @@ import About from "./DetailsTabs/About";
 import IpoTimeline from "./DetailsTabs/Timeline";
 import Details from "./DetailsTabs/Details";
 import DetailsHeader from "./DetailsTabs/DetailsHeader";
+import Breadcrumb from "../Breadcrumb";
 
-const IpoDetailsPage = () => {
+const IpoDetailsPage = ({ ipoDetails }) => {
+  const { company, link, logo } = ipoDetails || {};
   return (
     <>
       <ListPageTitle title="IPO Details Page" />
+      <Breadcrumb link={link} />
       <div>
-        <DetailsHeader/>
+        <DetailsHeader company={company} logo={logo} />
         <Details />
         <IpoTimeline />
         <About />

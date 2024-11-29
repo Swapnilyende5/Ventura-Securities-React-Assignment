@@ -3,11 +3,18 @@ import "./IpoListPage.css";
 import ListPageTitle from "../ListPageTitle";
 import { Link } from "react-router-dom";
 import { listTableSchema } from "../Schema/ListTableSchema";
+import Breadcrumb from "../Breadcrumb";
 
-const IpoListPage = () => {
+const IpoListPage = ({setIpoDetails}) => {
+  const handleData = (index) => {
+    const data = listTableSchema[index];
+    setIpoDetails(data)
+  };
+
   return (
     <>
       <ListPageTitle title="IPO List Page" />
+      <Breadcrumb />
       <div>
         <table>
           <thead>
@@ -22,7 +29,11 @@ const IpoListPage = () => {
             {listTableSchema.map((row, index) => (
               <tr key={index}>
                 <td className="issueDate">
-                  <Link style={{ textDecoration: "none" }} to={row.link}>
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={row.link}
+                    onClick={() => handleData(index)}
+                  >
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <img
                         src={row.logo}

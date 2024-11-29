@@ -132,6 +132,22 @@ tr:hover {
     margin: 20px 0;
 }
 
+.breadcrumb {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.breadcrumb p {
+    margin: 0;
+    margin-right: 10px;
+}
+
+.breadcrumb-link {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #767676;
+}
+
 .details-header_elements {
     display: flex;
     justify-content: space-between;
@@ -162,5 +178,41 @@ tr:hover {
 
     .secondaryText {
         font-size: 8px;
+    }
+
+    .wrapper {
+        flex-direction: row;
+        align-items: start;
+        margin-left: 20px;
+    }
+
+    .progress-container {
+        flex-direction: column;
+        width: 10%;
+    }
+
+    .labels-container {
+        flex-direction: column;
+        width: auto;
+        margin-top: 7px;
+        padding-left: 20px;
+        justify-content: flex-start;
+    }
+
+    .progress-line {
+        top: 10px;
+        left: 13px;
+        height: 83%;
+        width: 4px;
+    }
+
+    .step {
+        margin-bottom: 30px;
+    }
+
+    .label {
+        text-align: start;
+        margin-bottom: 51px;
+
     }
 }
